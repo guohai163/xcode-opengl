@@ -16,6 +16,11 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "learngl/stb_image.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+
 using std::cout;
 using std::endl;
 
@@ -31,9 +36,20 @@ void someOpenGLFunctionThatDrawOurTriangle(unsigned int shaderProgram, unsigned 
 //"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
 //"}\0";
 
-float mixValue = 0.8f;
+float mixValue = 0.3f;
 int main(int argc, const char * argv[])
 {
+
+//    glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+//    glm::mat4 trans;
+//    //矩阵位移
+//    //trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
+//    //矩阵旋转
+//    trans = glm::rotate(trans, glm::radians(45.0f), glm::vec3(0.0f,0.0f,1.0f));
+//    //矩阵缩放
+//    trans = glm::scale(trans, glm::vec3(0.5f,0.5f,0.5f));
+//    vec = trans * vec;
+//    cout<<vec.x<<vec.y<<vec.z<<endl;
 
 
 
@@ -244,6 +260,7 @@ int main(int argc, const char * argv[])
     ourShader.setInt("texture2", 1);
     
 
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -261,8 +278,19 @@ int main(int argc, const char * argv[])
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
         
+        
+        
+        glm::mat4 transform;
+        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
+        transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        
+         ourShader.use();
+        unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
+        glUniformMatrix4fv(transformLoc,1,GL_FALSE,glm::value_ptr(transform));
+        
+        
         //图形渲染部分
-        ourShader.use();
+       
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     
