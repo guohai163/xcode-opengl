@@ -36,6 +36,10 @@
 		2F158BE51FF5ECAB007C79BB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B881FEA8BBE007C79BB /* IOKit.framework */; };
 		2F158BE61FF5ECB3007C79BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8A1FEA8BC4007C79BB /* Cocoa.framework */; };
 		2F158BE71FF5ECBC007C79BB /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8E1FEA8BD1007C79BB /* CoreVideo.framework */; };
+		2F158BEC1FF61BC3007C79BB /* colors.fs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BE81FF5F111007C79BB /* colors.fs */; };
+		2F158BED1FF61BC3007C79BB /* colors.vs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BE91FF5F4F1007C79BB /* colors.vs */; };
+		2F158BEE1FF61BC3007C79BB /* lamp.fs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BEA1FF613CB007C79BB /* lamp.fs */; };
+		2F158BEF1FF61BC3007C79BB /* lamp.vs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BEB1FF613D7007C79BB /* lamp.vs */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,12 +71,16 @@
 		};
 		2F158BD81FF5EB36007C79BB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = resources;
+			dstSubfolderSpec = 7;
 			files = (
+				2F158BEC1FF61BC3007C79BB /* colors.fs in CopyFiles */,
+				2F158BED1FF61BC3007C79BB /* colors.vs in CopyFiles */,
+				2F158BEE1FF61BC3007C79BB /* lamp.fs in CopyFiles */,
+				2F158BEF1FF61BC3007C79BB /* lamp.vs in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -106,6 +114,10 @@
 		2F158BD11FF52CD7007C79BB /* lamp.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = lamp.fs; sourceTree = "<group>"; };
 		2F158BDA1FF5EB36007C79BB /* opengl-lighting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "opengl-lighting"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F158BDC1FF5EB36007C79BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2F158BE81FF5F111007C79BB /* colors.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = colors.fs; sourceTree = "<group>"; };
+		2F158BE91FF5F4F1007C79BB /* colors.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = colors.vs; sourceTree = "<group>"; };
+		2F158BEA1FF613CB007C79BB /* lamp.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = lamp.fs; sourceTree = "<group>"; };
+		2F158BEB1FF613D7007C79BB /* lamp.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = lamp.vs; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +271,10 @@
 		2F158BE31FF5EBD3007C79BB /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				2F158BE81FF5F111007C79BB /* colors.fs */,
+				2F158BE91FF5F4F1007C79BB /* colors.vs */,
+				2F158BEA1FF613CB007C79BB /* lamp.fs */,
+				2F158BEB1FF613D7007C79BB /* lamp.vs */,
 			);
 			path = resources;
 			sourceTree = "<group>";
