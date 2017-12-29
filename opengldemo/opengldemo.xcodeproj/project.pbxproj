@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F158B811FEA8B32007C79BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F158B801FEA8B32007C79BB /* main.cpp */; };
 		2F158B891FEA8BBE007C79BB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B881FEA8BBE007C79BB /* IOKit.framework */; };
 		2F158B8B1FEA8BC4007C79BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8A1FEA8BC4007C79BB /* Cocoa.framework */; };
 		2F158B8D1FEA8BCA007C79BB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8C1FEA8BCA007C79BB /* OpenGL.framework */; };
@@ -18,6 +17,25 @@
 		2F158BA61FF24EAD007C79BB /* 3.3.shader.fs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BA31FF24EA4007C79BB /* 3.3.shader.fs */; };
 		2F158BA71FF24EAD007C79BB /* 3.3.shader.vs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BA41FF24EA4007C79BB /* 3.3.shader.vs */; };
 		2F158BA81FF24EAD007C79BB /* awesomeface.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BA51FF24EA4007C79BB /* awesomeface.png */; };
+		2F158BBC1FF513B4007C79BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F158B801FEA8B32007C79BB /* main.cpp */; };
+		2F158BBD1FF513BA007C79BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F158BB61FF51397007C79BB /* main.cpp */; };
+		2F158BBE1FF51463007C79BB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8C1FEA8BCA007C79BB /* OpenGL.framework */; };
+		2F158BBF1FF5149C007C79BB /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B901FEA8C96007C79BB /* libglfw3.a */; };
+		2F158BC91FF521F8007C79BB /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F158BC81FF521F7007C79BB /* glad.c */; };
+		2F158BCA1FF52214007C79BB /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8E1FEA8BD1007C79BB /* CoreVideo.framework */; };
+		2F158BCB1FF5221D007C79BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8A1FEA8BC4007C79BB /* Cocoa.framework */; };
+		2F158BCC1FF52224007C79BB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B881FEA8BBE007C79BB /* IOKit.framework */; };
+		2F158BD21FF53084007C79BB /* colors.vs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BCE1FF52C6C007C79BB /* colors.vs */; };
+		2F158BD31FF53084007C79BB /* colors.fs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BCF1FF52C7C007C79BB /* colors.fs */; };
+		2F158BD41FF53084007C79BB /* lamp.vs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BD01FF52CC6007C79BB /* lamp.vs */; };
+		2F158BD51FF53084007C79BB /* lamp.fs in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F158BD11FF52CD7007C79BB /* lamp.fs */; };
+		2F158BDD1FF5EB36007C79BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F158BDC1FF5EB36007C79BB /* main.cpp */; };
+		2F158BE11FF5EB47007C79BB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8C1FEA8BCA007C79BB /* OpenGL.framework */; };
+		2F158BE21FF5EB54007C79BB /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B901FEA8C96007C79BB /* libglfw3.a */; };
+		2F158BE41FF5EC97007C79BB /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 2F158BC81FF521F7007C79BB /* glad.c */; };
+		2F158BE51FF5ECAB007C79BB /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B881FEA8BBE007C79BB /* IOKit.framework */; };
+		2F158BE61FF5ECB3007C79BB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8A1FEA8BC4007C79BB /* Cocoa.framework */; };
+		2F158BE71FF5ECBC007C79BB /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F158B8E1FEA8BD1007C79BB /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +51,28 @@
 				2F158BA21FF24E71007C79BB /* container.jpg in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F158BB21FF51397007C79BB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = resources;
+			dstSubfolderSpec = 7;
+			files = (
+				2F158BD21FF53084007C79BB /* colors.vs in CopyFiles */,
+				2F158BD31FF53084007C79BB /* colors.fs in CopyFiles */,
+				2F158BD41FF53084007C79BB /* lamp.vs in CopyFiles */,
+				2F158BD51FF53084007C79BB /* lamp.fs in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F158BD81FF5EB36007C79BB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -52,6 +92,20 @@
 		2F158BA31FF24EA4007C79BB /* 3.3.shader.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3.3.shader.fs; sourceTree = "<group>"; };
 		2F158BA41FF24EA4007C79BB /* 3.3.shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3.3.shader.vs; sourceTree = "<group>"; };
 		2F158BA51FF24EA4007C79BB /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
+		2F158BAC1FF4D78C007C79BB /* Camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		2F158BB41FF51397007C79BB /* opengl-p2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "opengl-p2"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F158BB61FF51397007C79BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2F158BC11FF51A0A007C79BB /* shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
+		2F158BC31FF51ABF007C79BB /* shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
+		2F158BC61FF51ED4007C79BB /* shader.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.fs; sourceTree = "<group>"; };
+		2F158BC81FF521F7007C79BB /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
+		2F158BCD1FF52BB7007C79BB /* camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		2F158BCE1FF52C6C007C79BB /* colors.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = colors.vs; sourceTree = "<group>"; };
+		2F158BCF1FF52C7C007C79BB /* colors.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = colors.fs; sourceTree = "<group>"; };
+		2F158BD01FF52CC6007C79BB /* lamp.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = lamp.vs; sourceTree = "<group>"; };
+		2F158BD11FF52CD7007C79BB /* lamp.fs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = lamp.fs; sourceTree = "<group>"; };
+		2F158BDA1FF5EB36007C79BB /* opengl-lighting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "opengl-lighting"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F158BDC1FF5EB36007C79BB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +121,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F158BB11FF51397007C79BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F158BCC1FF52224007C79BB /* IOKit.framework in Frameworks */,
+				2F158BCB1FF5221D007C79BB /* Cocoa.framework in Frameworks */,
+				2F158BCA1FF52214007C79BB /* CoreVideo.framework in Frameworks */,
+				2F158BBF1FF5149C007C79BB /* libglfw3.a in Frameworks */,
+				2F158BBE1FF51463007C79BB /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F158BD71FF5EB36007C79BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F158BE71FF5ECBC007C79BB /* CoreVideo.framework in Frameworks */,
+				2F158BE61FF5ECB3007C79BB /* Cocoa.framework in Frameworks */,
+				2F158BE51FF5ECAB007C79BB /* IOKit.framework in Frameworks */,
+				2F158BE21FF5EB54007C79BB /* libglfw3.a in Frameworks */,
+				2F158BE11FF5EB47007C79BB /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2F158B741FEA8B32007C79BB = {
 			isa = PBXGroup;
 			children = (
+				2F158BC21FF51AA2007C79BB /* base */,
 				2F158B7F1FEA8B32007C79BB /* opengldemo */,
+				2F158BB51FF51397007C79BB /* opengl-p2 */,
+				2F158BDB1FF5EB36007C79BB /* opengl-lighting */,
 				2F158B7E1FEA8B32007C79BB /* Products */,
 				2F158B871FEA8BBE007C79BB /* Frameworks */,
 			);
@@ -83,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				2F158B7D1FEA8B32007C79BB /* opengldemo */,
+				2F158BB41FF51397007C79BB /* opengl-p2 */,
+				2F158BDA1FF5EB36007C79BB /* opengl-lighting */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +199,7 @@
 			children = (
 				2F158B9A1FECD549007C79BB /* Shader.hpp */,
 				2F158B9D1FF102BE007C79BB /* stb_image.h */,
+				2F158BAC1FF4D78C007C79BB /* Camera.hpp */,
 			);
 			path = learngl;
 			sourceTree = "<group>";
@@ -129,6 +213,54 @@
 				2F158BA01FF24DE9007C79BB /* container.jpg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2F158BB51FF51397007C79BB /* opengl-p2 */ = {
+			isa = PBXGroup;
+			children = (
+				2F158BC01FF519ED007C79BB /* resources */,
+				2F158BB61FF51397007C79BB /* main.cpp */,
+			);
+			path = "opengl-p2";
+			sourceTree = "<group>";
+		};
+		2F158BC01FF519ED007C79BB /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F158BC11FF51A0A007C79BB /* shader.vs */,
+				2F158BC61FF51ED4007C79BB /* shader.fs */,
+				2F158BCE1FF52C6C007C79BB /* colors.vs */,
+				2F158BCF1FF52C7C007C79BB /* colors.fs */,
+				2F158BD01FF52CC6007C79BB /* lamp.vs */,
+				2F158BD11FF52CD7007C79BB /* lamp.fs */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		2F158BC21FF51AA2007C79BB /* base */ = {
+			isa = PBXGroup;
+			children = (
+				2F158BC81FF521F7007C79BB /* glad.c */,
+				2F158BC31FF51ABF007C79BB /* shader.h */,
+				2F158BCD1FF52BB7007C79BB /* camera.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		2F158BDB1FF5EB36007C79BB /* opengl-lighting */ = {
+			isa = PBXGroup;
+			children = (
+				2F158BE31FF5EBD3007C79BB /* resources */,
+				2F158BDC1FF5EB36007C79BB /* main.cpp */,
+			);
+			path = "opengl-lighting";
+			sourceTree = "<group>";
+		};
+		2F158BE31FF5EBD3007C79BB /* resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +283,40 @@
 			productReference = 2F158B7D1FEA8B32007C79BB /* opengldemo */;
 			productType = "com.apple.product-type.tool";
 		};
+		2F158BB31FF51397007C79BB /* opengl-p2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F158BB81FF51397007C79BB /* Build configuration list for PBXNativeTarget "opengl-p2" */;
+			buildPhases = (
+				2F158BB01FF51397007C79BB /* Sources */,
+				2F158BB11FF51397007C79BB /* Frameworks */,
+				2F158BB21FF51397007C79BB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "opengl-p2";
+			productName = "opengl-p2";
+			productReference = 2F158BB41FF51397007C79BB /* opengl-p2 */;
+			productType = "com.apple.product-type.tool";
+		};
+		2F158BD91FF5EB36007C79BB /* opengl-lighting */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F158BDE1FF5EB36007C79BB /* Build configuration list for PBXNativeTarget "opengl-lighting" */;
+			buildPhases = (
+				2F158BD61FF5EB36007C79BB /* Sources */,
+				2F158BD71FF5EB36007C79BB /* Frameworks */,
+				2F158BD81FF5EB36007C79BB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "opengl-lighting";
+			productName = "opengl-lighting";
+			productReference = 2F158BDA1FF5EB36007C79BB /* opengl-lighting */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,6 +327,14 @@
 				ORGANIZATIONNAME = gh;
 				TargetAttributes = {
 					2F158B7C1FEA8B32007C79BB = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					2F158BB31FF51397007C79BB = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					2F158BD91FF5EB36007C79BB = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
@@ -179,6 +353,8 @@
 			projectRoot = "";
 			targets = (
 				2F158B7C1FEA8B32007C79BB /* opengldemo */,
+				2F158BB31FF51397007C79BB /* opengl-p2 */,
+				2F158BD91FF5EB36007C79BB /* opengl-lighting */,
 			);
 		};
 /* End PBXProject section */
@@ -188,8 +364,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F158B811FEA8B32007C79BB /* main.cpp in Sources */,
+				2F158BBC1FF513B4007C79BB /* main.cpp in Sources */,
 				2F158B971FEA9050007C79BB /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F158BB01FF51397007C79BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F158BBD1FF513BA007C79BB /* main.cpp in Sources */,
+				2F158BC91FF521F8007C79BB /* glad.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F158BD61FF5EB36007C79BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F158BE41FF5EC97007C79BB /* glad.c in Sources */,
+				2F158BDD1FF5EB36007C79BB /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +515,62 @@
 			};
 			name = Release;
 		};
+		2F158BB91FF51397007C79BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH5H6F5UN2;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					../base,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2F158BBA1FF51397007C79BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH5H6F5UN2;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					../base,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2F158BDF1FF5EB36007C79BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH5H6F5UN2;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					../base,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2F158BE01FF5EB36007C79BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH5H6F5UN2;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					../base,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,6 +588,24 @@
 			buildConfigurations = (
 				2F158B851FEA8B32007C79BB /* Debug */,
 				2F158B861FEA8B32007C79BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F158BB81FF51397007C79BB /* Build configuration list for PBXNativeTarget "opengl-p2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F158BB91FF51397007C79BB /* Debug */,
+				2F158BBA1FF51397007C79BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F158BDE1FF5EB36007C79BB /* Build configuration list for PBXNativeTarget "opengl-lighting" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F158BDF1FF5EB36007C79BB /* Debug */,
+				2F158BE01FF5EB36007C79BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

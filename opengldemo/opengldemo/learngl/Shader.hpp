@@ -15,6 +15,8 @@
 #include <iostream>
 #include <glad/glad.h>
 
+#include <glm/glm.hpp>
+
 
 class Shader
 {
@@ -91,6 +93,11 @@ public:
     void setFloat(const std::string &name, float value) const
     {
         glUniform1f(glGetUniformLocation(ID, name.c_str()), value);
+    }
+    
+    void setMat4(const std::string &name, glm::mat4 &mat) const
+    {
+        glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &mat[0][0]);
     }
 private:
     void checkCompileError(unsigned int shader,std::string type)

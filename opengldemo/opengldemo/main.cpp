@@ -20,6 +20,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include <vector>
+using std::vector;
 
 using std::cout;
 using std::endl;
@@ -28,31 +30,13 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 void someOpenGLFunctionThatDrawOurTriangle(unsigned int shaderProgram, unsigned int VAO);
 
-//顶点着色器 GLSL
-//const char *vertexShaderSource = "#version 330 core\n"
-//"layout (location = 0) in vec3 aPos;\n"
-//"void main()\n"
-//"{\n"
-//"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-//"}\0";
-
 float mixValue = 0.3f;
+
+float xAxis = 0.0f;
+float yAxis = 0.0f;
+
 int main(int argc, const char * argv[])
 {
-
-//    glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
-//    glm::mat4 trans;
-//    //矩阵位移
-//    //trans = glm::translate(trans, glm::vec3(1.0f, 1.0f, 0.0f));
-//    //矩阵旋转
-//    trans = glm::rotate(trans, glm::radians(45.0f), glm::vec3(0.0f,0.0f,1.0f));
-//    //矩阵缩放
-//    trans = glm::scale(trans, glm::vec3(0.5f,0.5f,0.5f));
-//    vec = trans * vec;
-//    cout<<vec.x<<vec.y<<vec.z<<endl;
-
-
-
 
     if (!glfwInit())
     {
@@ -153,13 +137,58 @@ int main(int argc, const char * argv[])
 //
 //
 //    };
-    //矩阵坐标+颜色+纹理位置
+//    //矩阵坐标+颜色+纹理位置
+//    float vertices[] = {
+//        0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
+//        0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
+//        -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
+//        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
+//    };
+//
     float vertices[] = {
-        0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // 右上
-        0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // 右下
-        -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // 左下
-        -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // 左上
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+        0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+        
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        
+        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
+        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
+        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
+    
     unsigned int indices[] = {
         0, 1, 3, // first triangle
         1, 2, 3  // second triangle
@@ -170,7 +199,7 @@ int main(int argc, const char * argv[])
     glGenVertexArrays(1, &VAO);
     //生成VBO对象
     glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
+    //glGenBuffers(1, &EBO);
     
     //绑定
     glBindVertexArray(VAO);
@@ -180,18 +209,18 @@ int main(int argc, const char * argv[])
     //用户定义的数据复制到当前绑定缓冲
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices),indices, GL_STATIC_DRAW);
+    //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices),indices, GL_STATIC_DRAW);
     
     
     //// 1. 设置顶点属性指针
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     //绑定颜色
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3* sizeof(float)));
-    glEnableVertexAttribArray(1);
+    //glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3* sizeof(float)));
+    //glEnableVertexAttribArray(1);
     //绑定纹理
-    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float),(void*)(6*sizeof(float)));
+    glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float),(void*)(3*sizeof(float)));
     glEnableVertexAttribArray(2);
 //    第一个参数指定我们要配置的顶点属性。还记得我们在顶点着色器中使用layout(location = 0)定义了position顶点属性的位置值(Location)吗？它可以把顶点属性的位置值设置为0。因为我们希望把数据传递到这一个顶点属性中，所以这里我们传入0。
 //    第二个参数指定顶点属性的大小。顶点属性是一个vec3，它由3个值组成，所以大小是3。
@@ -255,12 +284,28 @@ int main(int argc, const char * argv[])
     
     stbi_image_free(data);
     
-    ourShader.use();
-    glUniform1i(glGetUniformLocation(ourShader.ID,"texture1"),0);
-    ourShader.setInt("texture2", 1);
+    
+//    glm::vec3 cubePositions[] = {
+//        glm::vec3(0.0f, 0.0f, 0.0f),
+//        glm::vec3( 2.0f,  5.0f, -15.0f),
+//        glm::vec3(-1.5f, -2.2f, -2.5f),
+//        glm::vec3(-3.8f, -2.0f, -12.3f),
+//        glm::vec3( 2.4f, -0.4f, -3.5f),
+//        glm::vec3(3.3f,4.0f,0.6f)
+//    };
+    
+
+    vector<glm::vec3> cubePositions;
+    cubePositions.push_back(glm::vec3(0.0f,0.0f,0.0f));
+    cubePositions.push_back(glm::vec3( 2.0f,  5.0f, -15.0f));
+    cubePositions.push_back(glm::vec3(-1.5f, -2.2f, -2.5f));
+    cubePositions.push_back(glm::vec3(-3.8f, -2.0f, -12.3f));
+   cubePositions.push_back(glm::vec3( 2.4f, -0.4f, -3.5f));
+    
     
 
 
+    glEnable(GL_DEPTH_TEST);
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -268,10 +313,11 @@ int main(int argc, const char * argv[])
         // input
         // -----
         processInput(window);
-        ourShader.setFloat("mixValue", mixValue);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        //ourShader.setFloat("mixValue", mixValue);
         
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        //glClear(GL_COLOR_BUFFER_BIT);
         
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D,texture1);
@@ -280,9 +326,47 @@ int main(int argc, const char * argv[])
         
         
         
+        
+        //第四课 坐标系统
+        //创建模型矩阵
+        glm::mat4 model;
+        //model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f,0.0f,0.0f));
+        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 1.0f));
+        //创建观察矩阵
+        //glm::mat4 view;
+        //将物体在Z轴向远方移动
+        //view = glm::translate(view, glm::vec3(0.0f,0.0f,-3.0f));
+        float radius = 20.0f;
+        cout<<"glfwGetTime is:"<<glfwGetTime()
+        <<"\tsin is: "<<sin(glfwGetTime())<<endl;
+        float camX = sin(glfwGetTime()) * radius;
+        float camZ = cos(glfwGetTime()) * radius;
+        glm::mat4 view;
+        view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 2.0, 0.0));
+        //创建投影矩阵
+        glm::mat4 projection;
+        projection = glm::perspective(glm::radians(45.0f), (float)800/(float)600, 0.1f, 100.0f);
+        
+        
+        ourShader.use();
+        glUniform1i(glGetUniformLocation(ourShader.ID,"texture1"),0);
+        ourShader.setInt("texture2", 1);
+        
+        
+        unsigned int modelLoc = glGetUniformLocation(ourShader.ID,"model");
+        glUniformMatrix4fv(modelLoc,1,GL_FALSE,glm::value_ptr(model));
+        
+        unsigned int viewLoc = glGetUniformLocation(ourShader.ID,"view");
+        glUniformMatrix4fv(viewLoc,1,GL_FALSE,glm::value_ptr(view));
+        
+        unsigned int projectionLoc = glGetUniformLocation(ourShader.ID,"projection");
+        glUniformMatrix4fv(projectionLoc,1,GL_FALSE,glm::value_ptr(projection));
+        
+        
+        
         glm::mat4 transform;
         transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
-        transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 1.0f, 1.0f));
         
          ourShader.use();
         unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
@@ -292,7 +376,20 @@ int main(int argc, const char * argv[])
         //图形渲染部分
        
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        for(auto cubePos:cubePositions)
+        {
+//        for(unsigned int i= 0;i<cubePositions.size();i++)
+//        {
+            glm::mat4 model;
+            model = glm::translate(model, cubePos);
+            float angle = 20.0f ;
+            model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            ourShader.setMat4("model", model);
+            
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
+        //glDrawArrays(GL_TRIANGLES, 0, 36);
+        //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------
